@@ -6,7 +6,7 @@
 /*   By: vlibert <vlibert@students.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 11:22:27 by vlibert           #+#    #+#             */
-/*   Updated: 2023/05/25 18:50:10 by vlibert          ###   ########.fr       */
+/*   Updated: 2023/05/25 22:42:00 by vlibert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,8 @@ char	**ft_split(char const *str, char charset)
 	{
 		while (i <= count)
 			free(tab[i++]);
+		free(tab);
+		return (NULL);
 	}
 	tab[count] = 0;
 	return (tab);
