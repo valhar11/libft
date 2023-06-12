@@ -37,9 +37,9 @@ SRC = ft_bzero.c		\
       ft_striteri.c		\
       ft_putchar_fd.c	\
       ft_putstr_fd.c	\
-      ft_putlendl_fd.c	\
+      ft_putendl_fd.c	\
       ft_atoi.c         \
-      ft_putnbr_nb.c
+      ft_putnbr_fd.c
 
 BONUS_SRC =  ft_lstnew.c		\
              ft_lstadd_front.c	\
@@ -70,7 +70,7 @@ bonus: $(BONUS_OBJ)
 	ar rc $(NAME) $(BONUS_OBJ)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
 	rm -f $(NAME)

@@ -6,7 +6,7 @@
 /*   By: vlibert <vlibert@students.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 11:22:27 by vlibert           #+#    #+#             */
-/*   Updated: 2023/05/25 22:42:00 by vlibert          ###   ########.fr       */
+/*   Updated: 2023/05/26 16:13:59 by vlibert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,11 @@ char	**ft_split(char const *str, char charset)
 {
 	char	**tab;
 	int		count;
-	int success;
-	int i;
+	int		success;
+	int		i;
 
 	i = 0;
-	success = 0; 
+	success = 0;
 	if (!str)
 		return (NULL);
 	count = ft_count_word(str, charset);
@@ -91,7 +91,7 @@ char	**ft_split(char const *str, char charset)
 		success = ft_split_word(tab, str, charset, count);
 	if (success == 1)
 	{
-		while (i <= count)
+		while (tab[i] && i <= count)
 			free(tab[i++]);
 		free(tab);
 		return (NULL);

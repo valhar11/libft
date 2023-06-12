@@ -6,13 +6,13 @@
 /*   By: vlibert <vlibert@students.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:36:41 by vlibert           #+#    #+#             */
-/*   Updated: 2023/05/25 16:27:41 by vlibert          ###   ########.fr       */
+/*   Updated: 2023/06/01 14:07:20 by vlibert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memmove_n(unsigned char *t_dst, unsigned char *t_src, size_t len)
+static void	ft_memmove_n(unsigned char *t_dst, unsigned char *t_src, size_t len)
 {
 	size_t	i;
 
@@ -24,7 +24,7 @@ void	ft_memmove_n(unsigned char *t_dst, unsigned char *t_src, size_t len)
 	}
 }
 
-void	ft_memmove_p(unsigned char *t_dst, unsigned char *t_src, size_t len)
+static void	ft_memmove_p(unsigned char *t_dst, unsigned char *t_src, size_t len)
 {
 	size_t	i;
 

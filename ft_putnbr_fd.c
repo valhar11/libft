@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlibert <vlibert@students.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 17:57:26 by vlibert           #+#    #+#             */
-/*   Updated: 2023/05/30 17:14:27 by vlibert          ###   ########.fr       */
+/*   Created: 2023/05/09 22:45:54 by vlibert           #+#    #+#             */
+/*   Updated: 2023/06/12 19:07:00 by vlibert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	ft_putnbr_fd(int nb, int fd)
 {
-	char	*dst;
-	size_t	dst_len;
-	size_t	i;
-
-	if (!s)
-		return (NULL);
-	i = 0;
-	if (start > (unsigned int) ft_strlen(s))
-		return (ft_strdup(""));
-	dst_len = ft_strlen((char *) s + start);
-	if (len > dst_len)
-		len = dst_len;
-	dst = malloc(sizeof(char) * len + 1);
-	if (!dst)
-		return (NULL);
-	while (i < len)
+	if (nb == -2147483648)
+		write(fd, "-2147483648", 11);
+	else
 	{
-		dst[i] = s[start + i];
-		i++;
+		if (nb < 0)
+		{
+			ft_putchar_fd('-', fd);
+			nb = -nb;
+		}
+		if (nb < 10)
+			ft_putchar_fd(nb + 48, fd);
+		if (nb >= 10)
+		{
+			ft_putnbr_fd(nb / 10, fd);
+			ft_putnbr_fd(nb % 10, fd);
+		}
 	}
-	dst[i] = 0;
-	return (dst);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlibert <marvin@42.fr>                     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*   By: vlibert <vlibert@students.42.fr>           +#+  +:+       +#+        */
+*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 15:45:49 by vlibert           #+#    #+#             */
-/*   Updated: 2023/05/11 16:13:19 by vlibert          ###   ########.fr       */
+/*   Updated: 2023/06/12 20:13:38 by vlibert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_ischarset(char c, char *set)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_trim(char const *s1, char const *set)
 {
 	int		start;
 	int		len;
@@ -34,7 +34,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 
 	i = 0;
-	start = 0;
+	start = 0
 	len = ft_strlen(s1) - 1;
 	if (s1[0] != 0)
 	{
@@ -52,4 +52,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 		dest[i++] = s1[start++];
 	dest[i] = 0;
 	return (dest);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	if (!s1)
+		return (NULL);
+	if (!set)
+		return ((char *)s1);
+	return (ft_trim(s1, set));
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vlibert <vlibert@student.s19.be>           +#+  +:+       +#+        */
+/*   By: vlibert <vlibert@students.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 11:29:38 by vlibert           #+#    #+#             */
-/*   Updated: 2023/05/11 15:40:03 by vlibert          ###   ########.fr       */
+/*   Updated: 2023/06/01 14:07:20 by vlibert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,3 @@ char	*ft_itoa(int n)
 	}
 	return (array);
 }
-
-/*
-int main()
-{
-	int nb = -1234;
-	char *array = ft_itoa(nb);
-	int i = 0;
-	while(array[i])
-		printf("%c", array[i++]);
-}
-*/

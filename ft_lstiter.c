@@ -6,7 +6,7 @@
 /*   By: vlibert <vlibert@students.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 14:40:21 by vlibert           #+#    #+#             */
-/*   Updated: 2023/05/22 17:48:27 by vlibert          ###   ########.fr       */
+/*   Updated: 2023/06/01 15:09:35 by vlibert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,19 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
+	t_list	*actual;
+	t_list	*following;
+
+	if (!lst)
+		return ;
+	actual = lst;
 	if (f)
 	{
-		while (lst)
+		while (actual != 0)
 		{
-			f(lst->content);
-			lst = lst->next;
+			following = actual->next;
+			f(actual->content);
+			actual = following;
 		}
 	}
 }
