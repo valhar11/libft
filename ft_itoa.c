@@ -6,7 +6,7 @@
 /*   By: vlibert <vlibert@students.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 11:29:38 by vlibert           #+#    #+#             */
-/*   Updated: 2023/06/01 14:07:20 by vlibert          ###   ########.fr       */
+/*   Updated: 2024/06/15 15:06:58 by vlibert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	*ft_itoa(int n)
 		return (NULL);
 	array[i--] = 0;
 	if (n < 0)
-		array[0] = 45;
+		array[0] = '-';
 	if (n == 0)
 		array[0] = '0';
 	while (n)
