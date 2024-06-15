@@ -4,9 +4,9 @@
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlibert <vlibert@students.42.fr>           +#+  +:+       +#+        */
-*                                                +#+#+#+#+#+   +#+           */
+/*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 15:45:49 by vlibert           #+#    #+#             */
-/*   Updated: 2023/06/12 20:13:38 by vlibert          ###   ########.fr       */
+/*   Updated: 2024/06/15 14:45:36 by vlibert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ static int	ft_ischarset(char c, char *set)
 	while (set[i])
 	{
 		if (set[i] == c)
+		{
 			return (1);
+		}
 		i++;
 	}
 	return (0);
@@ -34,7 +36,7 @@ char	*ft_trim(char const *s1, char const *set)
 	int		i;
 
 	i = 0;
-	start = 0
+	start = 0;
 	len = ft_strlen(s1) - 1;
 	if (s1[0] != 0)
 	{

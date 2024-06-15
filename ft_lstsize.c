@@ -6,14 +6,14 @@
 /*   By: vlibert <vlibert@students.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 17:33:39 by vlibert           #+#    #+#             */
-/*   Updated: 2023/05/22 17:47:31 by vlibert          ###   ########.fr       */
+/*   Updated: 2024/06/15 14:43:30 by vlibert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 int	ft_lstsize(t_list *lst)
-{	
+{
 	if (!lst)
 		return (0);
 	return (1 + ft_lstsize(lst->next));

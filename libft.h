@@ -6,12 +6,21 @@
 /*   By: vlibert <vlibert@students.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:59:52 by vlibert           #+#    #+#             */
-/*   Updated: 2023/05/25 16:11:02 by vlibert          ###   ########.fr       */
+/*   Updated: 2024/06/15 14:41:48 by vlibert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+# endif
+
+# if BUFFER_SIZE > 1000000
+#  undef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+# endif
 
 # include <unistd.h>
 # include <stdlib.h>

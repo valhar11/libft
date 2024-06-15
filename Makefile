@@ -51,26 +51,26 @@ BONUS_SRC =  ft_lstnew.c		\
              ft_lstiter.c		\
              ft_lstmap.c
 
+SRC_GNL = get_next_line.c
+
 OBJ = $(SRC:.c=.o)
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
+GNL_OBJ = $(SRC_GNL:.c=.o)
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
+$(NAME): $(OBJ) $(BONUS_OBJ) $(GNL_OBJ)
+	ar rc $(NAME) $(OBJ) $(BONUS_OBJ) $(GNL_OBJ)
 	ranlib $(NAME)
 
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
-bonus: $(BONUS_OBJ)
-	ar rc $(NAME) $(BONUS_OBJ)
-
 clean:
-	rm -f $(OBJ) $(BONUS_OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ) $(GNL_OBJ)
 
 fclean: clean
 	rm -f $(NAME)

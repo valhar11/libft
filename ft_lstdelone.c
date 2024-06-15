@@ -6,7 +6,7 @@
 /*   By: vlibert <vlibert@students.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:52:43 by vlibert           #+#    #+#             */
-/*   Updated: 2023/06/01 15:05:12 by vlibert          ###   ########.fr       */
+/*   Updated: 2024/06/15 14:43:36 by vlibert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 	{
 		del(lst->content);
 		free(lst);
-	}	
+	}
 }
